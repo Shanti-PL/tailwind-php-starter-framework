@@ -19,11 +19,19 @@ function styles() {
 }
 
 // script
+const jsMinify = require('gulp-terser');
 function scripts() {
-    return src('./app/src/scripts/**/*.js')
+    const scriptsList = [
+        './node_modules/jquery/dist/jquery.min.js',
+        './node_modules/slick-carousel/slick/slick.min.js',
+        './app/src/scripts/**/*.js',
+    ];
+
+    return src(scriptsList)
         .pipe( jsMinify() )
         .pipe( dest('./app/dist/scripts/') )
 }
+
 
 // assets
 const imagemin = require('gulp-imagemin');
