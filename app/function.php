@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . './env.php';
+include __DIR__ . '/env.php';
 
 $site = "";
 $phone_number = "";
